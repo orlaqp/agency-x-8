@@ -25,7 +25,12 @@
               "apps/frontend/src/favicon.ico",
               "apps/frontend/src/assets"
             ],
-            "styles": ["apps/frontend/src/styles.scss"],
+            "styles": ["apps/frontend/src/styles.scss"], 
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                    "libs/shared/styles/src"
+                ]
+            },           
             "scripts": []
           },
           "configurations": {
