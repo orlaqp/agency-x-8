@@ -24,4 +24,25 @@
 
 .signup {
     flex: 0 0 auto;
+    width: 280px;
+    margin-right: 80px;
 }
+
+.email-control {
+    background-color: white;
+    padding: 8px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+
+    &__icon {
+        flex: 0 0 auto;
+    }
+    &__input {
+        flex: 1 0 auto;
+    }
+    &__btn {
+        flex: 0 0 auto;
+    }
+}
+
