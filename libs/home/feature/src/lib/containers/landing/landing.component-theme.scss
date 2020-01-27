@@ -1,0 +1,19 @@
+@mixin landing-component-theme($theme) {
+    $primary: map-get($theme, primary);
+    $background: map-get($theme, background);
+
+    $start-color: mat-color($primary, 400);
+    $end-color: mat-color($primary, 900);
+    $background-color: mat-color($background, dialog);
+
+    agency-x-landing {
+        background: 
+            linear-gradient(to bottom, rgba($start-color, 0.95), rgba($end-color, 0.95)),
+            url(/assets/images/home/world_travel.png);
+
+        .email-control {
+            background-color: $background-color;
+        }
+    }
+
+}
