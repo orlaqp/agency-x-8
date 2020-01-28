@@ -1,7 +1,7 @@
 @mixin landing-component-theme($theme) {
     $primary: map-get($theme, primary);
     $background: map-get($theme, background);
-
+    
     $start-color: mat-color($primary, 400);
     $end-color: mat-color($primary, 900);
     $background-color: mat-color($background, dialog);
@@ -13,6 +13,10 @@
 
         .email-control {
             background-color: $background-color;
+
+            &__input {
+                background-color: transparent;
+            }
         }
     }
 

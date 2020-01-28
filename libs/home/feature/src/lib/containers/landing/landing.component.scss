@@ -36,6 +36,8 @@
     }
     &__input {
         flex: 1 0 auto;
+        border-style: none;
+        outline: none;
     }
     &__btn {
         flex: 0 0 auto;
