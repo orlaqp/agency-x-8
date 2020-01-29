@@ -21,16 +21,39 @@
             "polyfills": "apps/frontend/src/polyfills.ts",
             "tsConfig": "apps/frontend/tsconfig.app.json",
             "aot": false,
+            "extractCss": true,
             "assets": [
               "apps/frontend/src/favicon.ico",
               "apps/frontend/src/assets"
             ],
-            "styles": ["apps/frontend/src/styles.scss"], 
+            "styles": [
+              "apps/frontend/src/styles.scss",
+              {
+                "input": "apps/frontend/src/themes/amber-green.scss",
+                "bundleName": "assets/themes/amber-green",
+                "lazy": true
+              },
+              {
+                "input": "apps/frontend/src/themes/dark-yellow.scss",
+                "bundleName": "assets/themes/dark-yellow",
+                "lazy": true
+              },
+              {
+                "input": "apps/frontend/src/themes/deep-purple-green.scss",
+                "bundleName": "assets/themes/deep-purple-green",
+                "lazy": true
+              },
+              {
+                "input": "apps/frontend/src/themes/pink-blue-gray.scss",
+                "bundleName": "assets/themes/pink-blue-gray",
+                "lazy": true
+              },
+            ],
             "stylePreprocessorOptions": {
                 "includePaths": [
                     "libs/shared/styles/src"
                 ]
-            },           
+            },
             "scripts": []
           },
           "configurations": {
