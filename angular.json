@@ -47,12 +47,10 @@
                 "input": "apps/frontend/src/themes/pink-blue-gray.scss",
                 "bundleName": "assets/themes/pink-blue-gray",
                 "lazy": true
-              },
+              }
             ],
             "stylePreprocessorOptions": {
-                "includePaths": [
-                    "libs/shared/styles/src"
-                ]
+              "includePaths": ["libs/shared/styles/src"]
             },
             "scripts": []
           },
@@ -174,6 +172,68 @@
             "jestConfig": "libs/home/feature/jest.config.js",
             "tsConfig": "libs/home/feature/tsconfig.spec.json",
             "setupFile": "libs/home/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "theme-picker": {
+      "projectType": "library",
+      "root": "libs/theme-picker",
+      "sourceRoot": "libs/theme-picker/src",
+      "prefix": "agency-x",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/theme-picker/tsconfig.lib.json",
+              "libs/theme-picker/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/theme-picker/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/theme-picker/jest.config.js",
+            "tsConfig": "libs/theme-picker/tsconfig.spec.json",
+            "setupFile": "libs/theme-picker/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "angular-material": {
+      "projectType": "library",
+      "root": "libs/angular-material",
+      "sourceRoot": "libs/angular-material/src",
+      "prefix": "agency-x",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-material/tsconfig.lib.json",
+              "libs/angular-material/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/angular-material/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-material/jest.config.js",
+            "tsConfig": "libs/angular-material/tsconfig.spec.json",
+            "setupFile": "libs/angular-material/src/test-setup.ts"
           }
         }
       },

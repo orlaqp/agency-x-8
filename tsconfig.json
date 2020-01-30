@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@agency-x/home/feature": ["libs/home/feature/src/index.ts"]
+      "@agency-x/home/feature": ["libs/home/feature/src/index.ts"],
+      "@agency-x/theme-picker": ["libs/theme-picker/src/index.ts"],
+      "@agency-x/angular-material": ["libs/angular-material/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
