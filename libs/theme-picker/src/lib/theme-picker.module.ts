@@ -7,6 +7,7 @@ import { AngularMaterialModule } from '@agency-x/angular-material';
   imports: [
     CommonModule,
     AngularMaterialModule,
+
   ],
   declarations: [ThemePickerComponent],
   exports: [ThemePickerComponent]

@@ -26,6 +26,12 @@
     },
     "angular-material": {
       "tags": []
+    },
+    "config-frontend": {
+      "tags": []
+    },
+    "shared-shared": {
+      "tags": []
     }
   }
 }

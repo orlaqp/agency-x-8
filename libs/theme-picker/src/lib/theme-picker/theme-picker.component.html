@@ -2,16 +2,8 @@
   <mat-icon>format_paint</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <button mat-menu-item *ngFor="let t of themes">
     <mat-icon>dialpad</mat-icon>
-    <span>Redial</span>
-  </button>
-  <button mat-menu-item disabled>
-    <mat-icon>voicemail</mat-icon>
-    <span>Check voice mail</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>notifications_off</mat-icon>
-    <span>Disable alerts</span>
+  <span>{{ t.id }}</span>
   </button>
 </mat-menu>

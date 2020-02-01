@@ -24,7 +24,8 @@
             "extractCss": true,
             "assets": [
               "apps/frontend/src/favicon.ico",
-              "apps/frontend/src/assets"
+              "apps/frontend/src/assets",
+              "apps/frontend/src/env.js"
             ],
             "styles": [
               "apps/frontend/src/styles.scss",
@@ -234,6 +235,68 @@
             "jestConfig": "libs/angular-material/jest.config.js",
             "tsConfig": "libs/angular-material/tsconfig.spec.json",
             "setupFile": "libs/angular-material/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "config-frontend": {
+      "projectType": "library",
+      "root": "libs/config/frontend",
+      "sourceRoot": "libs/config/frontend/src",
+      "prefix": "agency-x",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/config/frontend/tsconfig.lib.json",
+              "libs/config/frontend/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/config/frontend/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/config/frontend/jest.config.js",
+            "tsConfig": "libs/config/frontend/tsconfig.spec.json",
+            "setupFile": "libs/config/frontend/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "shared-shared": {
+      "projectType": "library",
+      "root": "libs/shared/shared",
+      "sourceRoot": "libs/shared/shared/src",
+      "prefix": "agency-x",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/shared/tsconfig.lib.json",
+              "libs/shared/shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/shared/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/shared/jest.config.js",
+            "tsConfig": "libs/shared/shared/tsconfig.spec.json",
+            "setupFile": "libs/shared/shared/src/test-setup.ts"
           }
         }
       },

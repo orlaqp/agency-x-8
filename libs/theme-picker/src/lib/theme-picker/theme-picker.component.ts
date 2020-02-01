@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EnvService } from '@agency-x/config/frontend';
+import { ITheme } from '@agency-x/shared/shared';
 
 @Component({
   selector: 'agency-x-theme-picker',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemePickerComponent implements OnInit {
 
-  constructor() { }
+  public themes: ITheme[];
+
+  constructor(env: EnvService) {
+    this.themes = env.themes;
+  }
 
   ngOnInit() {
   }
