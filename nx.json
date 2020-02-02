@@ -32,6 +32,9 @@
     },
     "shared-shared": {
       "tags": []
+    },
+    "language-picker": {
+      "tags": []
     }
   }
 }

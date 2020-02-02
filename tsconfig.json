@@ -20,7 +20,8 @@
       "@agency-x/theme-picker": ["libs/theme-picker/src/index.ts"],
       "@agency-x/angular-material": ["libs/angular-material/src/index.ts"],
       "@agency-x/config/frontend": ["libs/config/frontend/src/index.ts"],
-      "@agency-x/shared/shared": ["libs/shared/shared/src/index.ts"]
+      "@agency-x/shared/shared": ["libs/shared/shared/src/index.ts"],
+      "@agency-x/language-picker": ["libs/language-picker/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

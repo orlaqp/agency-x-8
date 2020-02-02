@@ -325,6 +325,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "language-picker": {
+      "projectType": "library",
+      "root": "libs/language-picker",
+      "sourceRoot": "libs/language-picker/src",
+      "prefix": "agency-x",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/language-picker/tsconfig.lib.json",
+              "libs/language-picker/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/language-picker/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/language-picker/jest.config.js",
+            "tsConfig": "libs/language-picker/tsconfig.spec.json",
+            "setupFile": "libs/language-picker/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

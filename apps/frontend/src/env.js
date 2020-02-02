@@ -33,11 +33,24 @@
       href: 'pink-blue-gray.css',
       isDefault: false
     },
+  ];
+
+  const languages = [
+    {
+      name: "English",
+      href: "http://localhost:4200",
+      isDefault: true
+    },
+    {
+      name: "Spanish",
+      href: "http://localhost:4300"
+    },
   ]
 
   window.__env = {
     debugMode: true,
-    themes: themes
+    themes: themes,
+    languages: languages
   };
 
 })(this);

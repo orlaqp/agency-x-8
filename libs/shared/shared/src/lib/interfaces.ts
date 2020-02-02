@@ -6,3 +6,9 @@ export interface ITheme {
   href: string;
   isDefault: boolean;
 }
+
+export interface ILanguage {
+  name: string;
+  href: string;
+  isDefault: boolean;
+}
