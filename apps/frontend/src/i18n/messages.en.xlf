@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="applicationName" datatype="html">
+        <source>Agency X</source>
+        <target>Agency X</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/home/feature/src/lib/containers/landing/landing.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">application name</note>
+      </trans-unit>
+      <trans-unit id="signupParagraph" datatype="html">
+        <source>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, nobis ipsam doloribus, ipsa, facilis iste nisi qui rem deserunt esse libero laborum! Temporibus tempora soluta molestias modi eligendi suscipit labore.</source>
+        <target>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, nobis ipsam doloribus, ipsa, facilis iste nisi qui rem deserunt esse libero laborum! Temporibus tempora soluta molestias modi eligendi suscipit labore.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">../../libs/home/feature/src/lib/containers/landing/landing.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">signup paragraph</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
