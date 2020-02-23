@@ -1,7 +1,12 @@
 <div class="email-control">
-  <i class="email-control__icon">IC</i>
-  <input class="email-control__input" type="text" [formControl]="emailControl">
-  <button class="email-control__btn">Signup</button>
+  <mat-icon>mail</mat-icon>
+  <i class="email-control__icon"></i>
+  <input class="email-control__input" type="text"
+    [formControl]="emailControl" placeholder="let's get started with your email...">
+  <button mat-raised-button class="email-control__btn">
+    SIGN UP
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
 </div>
 
 <pre>{{ emailControl.value }}</pre>
