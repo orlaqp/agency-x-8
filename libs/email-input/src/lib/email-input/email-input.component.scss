@@ -1,0 +1,19 @@
+.email-control {
+  padding: 8px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+
+  &__icon {
+      flex: 0 0 auto;
+  }
+  &__input {
+      flex: 1 0 auto;
+      border-style: none;
+      outline: none;
+  }
+  &__btn {
+      flex: 0 0 auto;
+  }
+}
+
