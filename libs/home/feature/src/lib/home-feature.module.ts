@@ -5,6 +5,7 @@ import { LandingComponent } from './containers/landing/landing.component';
 import { ThemePickerModule } from '@agency-x/theme-picker';
 import { LanguagePickerModule } from '@agency-x/language-picker';
 import { EmailInputModule } from '@agency-x/email-input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { EmailInputModule } from '@agency-x/email-input';
     ThemePickerModule,
     LanguagePickerModule,
     EmailInputModule,
+    ReactiveFormsModule,
 
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: LandingComponent}

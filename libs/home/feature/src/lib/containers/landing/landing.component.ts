@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'agency-x-landing',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
+  emailControl = new FormControl('');
+
   constructor() { }
 
   ngOnInit() {
+    this.emailControl.valueChanges.subscribe(val => console.log(`Landing component: ${val}`));
   }
 
 }
