@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormControl, Validators, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { debounceTime, filter, tap, distinctUntilChanged } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { Subscription, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'agency-x-email-input',
@@ -13,6 +15,19 @@ import { Subscription } from 'rxjs';
       useExisting: EmailInputComponent,
       multi: true
     }
+  ],
+  animations:[
+    trigger('focusAnimation', [
+      state('default', style({
+        transform: 'scale(1)',
+        'box-shadow': 'none'
+      })),
+      state('focused', style({
+        transform: 'scale(1.05)',
+        'box-shadow': '0 0 1.5rem rgba({{shadowRgb}},.5)'
+      }), { params: { shadowRgb: '0,0,0' } }),
+      transition('default <=> focused', animate(150))
+    ])
   ]
 })
 export class EmailInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
@@ -22,6 +37,11 @@ export class EmailInputComponent implements OnInit, OnDestroy, ControlValueAcces
 
   private onChange: any;
   private subs: Subscription;
+  private focusSubject = new BehaviorSubject<number>(0);
+
+  focusState$ = this.focusSubject.pipe(
+    map(val => val === 0 ? 'default' : 'focused')
+  );
 
   constructor() { }
 
@@ -52,6 +72,11 @@ export class EmailInputComponent implements OnInit, OnDestroy, ControlValueAcces
       this.emailControl.disable();
     else
       this.emailControl.enable();
+  }
+
+  updateFocusSubject(value: number) {
+    const currentValue = this.focusSubject.value;
+    this.focusSubject.next(currentValue + value);
   }
 
 }
