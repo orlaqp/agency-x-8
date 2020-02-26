@@ -89,6 +89,7 @@
             },
             "en": {
               "aot": true,
+              "baseHref": "/frontend-en/",
               "outputPath": "dist/frontend-en/",
               "i18nFile": "apps/frontend/src/i18n/messages.en.xlf",
               "i18nFormat": "xlf",
@@ -96,6 +97,7 @@
             },
             "es": {
               "aot": true,
+              "baseHref": "/frontend-es/",
               "outputPath": "dist/frontend-es/",
               "i18nFile": "apps/frontend/src/i18n/messages.es.xlf",
               "i18nFormat": "xlf",

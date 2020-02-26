@@ -54,12 +54,19 @@ export class SharedState implements NgxsOnInit {
   }
 
   ngxsOnInit(ctx?: StateContext<SharedStateModel>) {
-    ctx.patchState({
-      themes: this.envService.themes,
-      selectedTheme: this.envService.themes.find(t => t.isDefault),
-      languages: this.envService.languages,
-      selectedLanguage: this.envService.languages.find(l => l.isDefault)
-    });
+    const state = ctx.getState();
+    debugger;
+
+    const themes = state.themes.length ? state.themes : this.envService.themes;
+    const selectedTheme = state.selectedTheme
+      ? themes.find(t => t.id === state.selectedTheme.id)
+      : themes.find(t => t.isDefault);
+    const languages = state.languages.length ? state.languages : this.envService.languages;
+    const selectedLanguage = state.selectedLanguage
+      ? state.languages.find(l => l.name === state.selectedLanguage.name)
+      : languages.find(l => l.isDefault);
+
+    ctx.patchState({ themes, selectedTheme, languages, selectedLanguage});
 
     this.store.select<ITheme>(store => store.shared ? store.shared.selectedTheme : undefined)
     .subscribe(theme => this.styleManagerService.changeTheme(theme));

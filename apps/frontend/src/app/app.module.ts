@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfigFrontendModule } from '@agency-x/config/frontend';
 import { NgxsModule } from '@ngxs/store';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,7 @@ import { NgxsModule } from '@ngxs/store';
     RouterModule.forRoot(
       [
         {
-          path: 'home-feature',
+          path: '',
           loadChildren: () =>
             import('@agency-x/home/feature').then(
               module => module.HomeFeatureModule
@@ -26,6 +27,7 @@ import { NgxsModule } from '@ngxs/store';
     BrowserAnimationsModule,
     ConfigFrontendModule,
     NgxsModule.forRoot([]),
+    NgxsStoragePluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
