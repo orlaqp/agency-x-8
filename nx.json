@@ -38,6 +38,9 @@
     },
     "email-input": {
       "tags": []
+    },
+    "shared-data-access": {
+      "tags": []
     }
   }
 }

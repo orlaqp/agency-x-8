@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfigFrontendModule } from '@agency-x/config/frontend';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { ConfigFrontendModule } from '@agency-x/config/frontend';
     ),
     BrowserAnimationsModule,
     ConfigFrontendModule,
+    NgxsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]

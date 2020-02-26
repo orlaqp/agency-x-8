@@ -51,7 +51,9 @@
               }
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/styles/src"]
+              "includePaths": [
+                "libs/shared/styles/src"
+              ]
             },
             "scripts": []
           },
@@ -131,7 +133,10 @@
               "apps/frontend/tsconfig.app.json",
               "apps/frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/frontend/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend/**"
+            ]
           }
         },
         "test": {
@@ -165,8 +170,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/frontend-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/frontend-e2e/**"]
+            "tsConfig": [
+              "apps/frontend-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/frontend-e2e/**"
+            ]
           }
         }
       }
@@ -184,7 +194,10 @@
               "libs/home/feature/tsconfig.lib.json",
               "libs/home/feature/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/home/feature/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/home/feature/**"
+            ]
           }
         },
         "test": {
@@ -215,7 +228,10 @@
               "libs/theme-picker/tsconfig.lib.json",
               "libs/theme-picker/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/theme-picker/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/theme-picker/**"
+            ]
           }
         },
         "test": {
@@ -246,7 +262,10 @@
               "libs/angular-material/tsconfig.lib.json",
               "libs/angular-material/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/angular-material/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-material/**"
+            ]
           }
         },
         "test": {
@@ -277,7 +296,10 @@
               "libs/config/frontend/tsconfig.lib.json",
               "libs/config/frontend/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/config/frontend/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/config/frontend/**"
+            ]
           }
         },
         "test": {
@@ -308,7 +330,10 @@
               "libs/shared/shared/tsconfig.lib.json",
               "libs/shared/shared/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/shared/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/shared/**"
+            ]
           }
         },
         "test": {
@@ -339,7 +364,10 @@
               "libs/language-picker/tsconfig.lib.json",
               "libs/language-picker/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/language-picker/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/language-picker/**"
+            ]
           }
         },
         "test": {
@@ -370,7 +398,10 @@
               "libs/email-input/tsconfig.lib.json",
               "libs/email-input/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/email-input/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/email-input/**"
+            ]
           }
         },
         "test": {
@@ -387,10 +418,44 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/data-access",
+      "sourceRoot": "libs/shared/data-access/src",
+      "prefix": "agency-x",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access/tsconfig.lib.json",
+              "libs/shared/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access/jest.config.js",
+            "tsConfig": "libs/shared/data-access/tsconfig.spec.json",
+            "setupFile": "libs/shared/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@ngxs/schematics"
   },
   "schematics": {
     "@nrwl/angular:application": {
