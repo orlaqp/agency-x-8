@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ITheme } from '@agency-x/shared/shared';
+import { ITheme } from '@agency-x/shared/data-access';
 
 @Injectable()
 export class StyleManagerService {

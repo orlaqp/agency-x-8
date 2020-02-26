@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EnvService } from '@agency-x/config/frontend';
-import { ILanguage } from '@agency-x/shared/shared';
+import { ILanguage } from '@agency-x/shared/data-access';
 
 @Component({
   selector: 'agency-x-language-picker',

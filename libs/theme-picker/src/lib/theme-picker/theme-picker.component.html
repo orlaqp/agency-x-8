@@ -3,9 +3,9 @@
 </button>
 <mat-menu #menu="matMenu">
   <mat-grid-list cols="2">
-    <mat-grid-tile *ngFor="let t of themes">
+    <mat-grid-tile *ngFor="let t of themes$ | async">
       <button mat-mini-fab [style.backgroundColor]="t.primary" (click)="changeTheme(t)">
-        <mat-icon *ngIf="t == selectedTheme" [style.color]="t.accent">check</mat-icon>
+        <mat-icon *ngIf="t == (selectedTheme$ | async)" [style.color]="t.accent">check</mat-icon>
       </button>
     </mat-grid-tile>
   </mat-grid-list>

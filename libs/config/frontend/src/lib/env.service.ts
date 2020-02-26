@@ -1,4 +1,4 @@
-import { ITheme, ILanguage } from '@agency-x/shared/shared';
+import { ITheme, ILanguage } from '@agency-x/shared/data-access';
 
 export class EnvService {
   debugMode = true;
