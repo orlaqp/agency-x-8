@@ -2,8 +2,8 @@
   <mat-icon>translate</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item *ngFor="let lang of languages" (click)="changeLanguage(lang)">
-    <mat-icon *ngIf="lang == selectedLanguage; else noIcon">check</mat-icon>
+  <button mat-menu-item *ngFor="let lang of languages$ | async" (click)="changeLanguage(lang)">
+    <mat-icon *ngIf="lang === (selectedLanguage$ | async); else noIcon">check</mat-icon>
   <span>{{ lang.name }}</span>
   </button>
 </mat-menu>
