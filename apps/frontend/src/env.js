@@ -36,24 +36,24 @@
   ];
 
   const languages = [
-    // {
-    //   name: "English",
-    //   href: "http://localhost:4200",
-    //   isDefault: true
-    // },
-    // {
-    //   name: "Spanish",
-    //   href: "http://localhost:4300"
-    // },
     {
       name: "English",
-      href: "http://localhost:8080/frontend-en",
+      href: "http://localhost:4200",
       isDefault: true
     },
     {
       name: "Spanish",
-      href: "http://localhost:8080/frontend-es"
+      href: "http://localhost:4300"
     },
+    // {
+    //   name: "English",
+    //   href: "http://localhost:8080/frontend-en",
+    //   isDefault: true
+    // },
+    // {
+    //   name: "Spanish",
+    //   href: "http://localhost:8080/frontend-es"
+    // },
   ]
 
   window.__env = {

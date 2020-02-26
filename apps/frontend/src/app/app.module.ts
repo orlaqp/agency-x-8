@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfigFrontendModule } from '@agency-x/config/frontend';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +30,8 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     ConfigFrontendModule,
     NgxsModule.forRoot([]),
     NgxsStoragePluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

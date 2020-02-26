@@ -55,7 +55,6 @@ export class SharedState implements NgxsOnInit {
 
   ngxsOnInit(ctx?: StateContext<SharedStateModel>) {
     const state = ctx.getState();
-    debugger;
 
     const themes = state.themes.length ? state.themes : this.envService.themes;
     const selectedTheme = state.selectedTheme

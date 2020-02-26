@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormControl, Validators, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { debounceTime, filter, tap, distinctUntilChanged } from 'rxjs/operators';
-import { Subscription, BehaviorSubject } from 'rxjs';
+import { Subscription, BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Select } from '@ngxs/store';
+import { SharedState, ITheme } from '@agency-x/shared/data-access';
 
 @Component({
   selector: 'agency-x-email-input',
@@ -31,6 +33,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class EmailInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
+  @Select(SharedState.selectedTheme)
+  selectedTheme$: Observable<ITheme>;
+
   @Input() deboundTime = 500;
 
   emailControl = new FormControl('', [Validators.required, Validators.email]);
@@ -41,6 +46,10 @@ export class EmailInputComponent implements OnInit, OnDestroy, ControlValueAcces
 
   focusState$ = this.focusSubject.pipe(
     map(val => val === 0 ? 'default' : 'focused')
+  );
+
+  shadowRgb$ = this.selectedTheme$.pipe(
+    map(t => t.isDark ? '238,238,238' : '0,0,0')
   );
 
   constructor() { }

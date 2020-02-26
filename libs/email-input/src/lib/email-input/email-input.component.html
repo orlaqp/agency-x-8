@@ -1,4 +1,4 @@
-<div class="email-control" [@focusAnimation]="{ value: focusState$ | async, params: { shadowRgb: '0,0,255' } }" (mouseenter)="updateFocusSubject(1)" (mouseleave)="updateFocusSubject(-1)">
+<div class="email-control" [@focusAnimation]="{ value: focusState$ | async, params: { shadowRgb: shadowRgb$ | async } }" (mouseenter)="updateFocusSubject(1)" (mouseleave)="updateFocusSubject(-1)">
   <mat-icon>mail</mat-icon>
   <i class="email-control__icon"></i>
   <input class="email-control__input" type="text"
