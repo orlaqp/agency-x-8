@@ -45,7 +45,7 @@
     "@ngxs/logger-plugin": "^3.6.2",
     "@ngxs/schematics": "^0.0.1-alpha.5",
     "@ngxs/storage-plugin": "^3.6.2",
-    "@ngxs/store": "^3.3.2",
+    "@ngxs/store": "^3.6.2",
     "@nrwl/angular": "^9.5.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.6.0",
