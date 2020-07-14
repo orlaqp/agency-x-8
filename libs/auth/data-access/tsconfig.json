@@ -3,5 +3,5 @@
   "compilerOptions": {
     "types": ["node", "jest"]
   },
-  "include": ["**/*.ts", "../../auth/data-access/src/lib/home-feature.module copy.ts"]
+  "include": ["**/*.ts"]
 }

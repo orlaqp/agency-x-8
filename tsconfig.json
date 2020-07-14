@@ -23,7 +23,8 @@
       "@agency-x/shared/shared": ["libs/shared/shared/src/index.ts"],
       "@agency-x/language-picker": ["libs/language-picker/src/index.ts"],
       "@agency-x/email-input": ["libs/email-input/src/index.ts"],
-      "@agency-x/shared/data-access": ["libs/shared/data-access/src/index.ts"]
+      "@agency-x/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@agency-x/auth/data-access": ["libs/auth/data-access/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -21,7 +21,6 @@ export interface SharedStateModel {
     selectedLanguage: ILanguage;
 }
 
-@Injectable()
 @State<SharedStateModel>({
     name: 'shared',
     defaults: {
@@ -31,6 +30,7 @@ export interface SharedStateModel {
         selectedLanguage: undefined,
     },
 })
+@Injectable()
 export class SharedState implements NgxsOnInit {
     constructor(
         private store: Store,

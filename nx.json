@@ -41,6 +41,9 @@
     },
     "shared-data-access": {
       "tags": []
+    },
+    "auth-data-access": {
+      "tags": []
     }
   },
   "tasksRunnerOptions": {

@@ -171,7 +171,7 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/cdk@~10.0.1":
+"@angular/cdk@^10.0.1":
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-10.0.1.tgz#8e10317cd6fee4d9f8a3794998629496fb60e68b"
   integrity sha512-tEgaTDQplptbOf4cHHdVScH0h5QNvkWDhabAWpWaT4/dVXEsp+p2E9Pzkemesi/gNmUIetVjGaicX5VqsijZSQ==
@@ -243,6 +243,13 @@
   version "10.0.3"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-10.0.3.tgz#2cfef68c2ac088f9e1bf72cb4601391cff4f9c92"
   integrity sha512-EfWAz5StlPYo2ZtvVzeoNlGrFAXRncwGd/CExbLFOZx4HcDXVkATw5d4vnKHmmKacDqnbuvMD2M0Tl0EJi5q4g==
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular/flex-layout@^10.0.0-beta.32":
+  version "10.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-10.0.0-beta.32.tgz#a797ebd6f3689c71a63e99aa62f2b9cb933f5e2d"
+  integrity sha512-JvuY4dUoy5jyCTIrFiq7n30Znakh1pD3nbg0h0hs2r3t1OiDQb0ZSI1wcumosG/vYHsuJQTuNhbfaIZzA1x8nA==
   dependencies:
     tslib "^2.0.0"
 
@@ -1509,7 +1516,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@ngxs/store@^3.3.2":
+"@ngxs/store@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.6.2.tgz#cfba63dc1e5bd422e89e54b3332cd69818510624"
   integrity sha512-al7GU618SAuz2Ul4rFYVDgS1DM0gHReGOGvbnE7LBt4Etz3gsJERNYXPp2bSA7lZGaRPRaFfIHJN+Lm/GikFJw==
@@ -2114,6 +2121,14 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+angular-auth-oidc-client@^11.1.4:
+  version "11.1.4"
+  resolved "https://registry.yarnpkg.com/angular-auth-oidc-client/-/angular-auth-oidc-client-11.1.4.tgz#5d81adb19618ab41e8aeff1f71beab8cc721ead6"
+  integrity sha512-jqSQ46muXoJB6raSTdHwCx/Qfpu8D6X4JseOLD1BpZE4s2N4T+kD7gpIjz3S4y7ZE0+VjR/4zSkRaw55JhsPqA==
+  dependencies:
+    common-tags "^1.8.0"
+    jsrsasign-reduced "^8.0.15"
 
 ansi-colors@4.1.1:
   version "4.1.1"
@@ -3315,7 +3330,7 @@ commander@^2.11.0, commander@^2.12.1, commander@^2.20.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-common-tags@1.8.0:
+common-tags@1.8.0, common-tags@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
   integrity sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==
@@ -6613,6 +6628,11 @@ jsprim@^1.2.2:
     extsprintf "1.3.0"
     json-schema "0.2.3"
     verror "1.10.0"
+
+jsrsasign-reduced@^8.0.15:
+  version "8.0.15"
+  resolved "https://registry.yarnpkg.com/jsrsasign-reduced/-/jsrsasign-reduced-8.0.15.tgz#a1b110cdbb83bc0af91e9c66bee6f62ce0c9719d"
+  integrity sha512-Ig4W69nXCIUedzOSk3nqJWUr2DmSDENYfsmCqVK33GPETtPcjwREGQc92hV5jcJ6zavMvGD4tjhZ+T7JIiaSLA==
 
 karma-source-map-support@1.4.0:
   version "1.4.0"
