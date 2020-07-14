@@ -2,7 +2,6 @@
 <@layout.registrationLayout; section>
     <#if section = "header">
         ${msg("registerTitle")}
-        HELLOOOOO
     <#elseif section = "form">
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
