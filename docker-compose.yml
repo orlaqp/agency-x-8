@@ -32,5 +32,8 @@ services:
         #JDBC_PARAMS: "ssl=true"
       ports:
         - "8080:8080"
+      volumes:
+        - ./.infrastructure/keycloack/themes:/opt/jboss/keycloak/themes
+        - ./.infrastructure/keycloack/configuration/standalone.xml:/opt/jboss/keycloak/standalone/configuration/standalone.xml
       depends_on:
         - postgres
