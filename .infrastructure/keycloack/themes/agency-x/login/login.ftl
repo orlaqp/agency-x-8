@@ -92,7 +92,7 @@
 
                                 <div class="container-login100-form-btn">
                                     <button class="login100-form-btn" name="login" id="kc-login" type="submit">
-                                        Login
+                                        ${msg("doLogIn")}
                                     </button>
                                 </div>
 

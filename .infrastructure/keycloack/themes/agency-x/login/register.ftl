@@ -159,7 +159,9 @@
                             <!-- signup button -->
                             
                             <div class="container-login100-form-btn">
-                                <button class="login100-form-btn" type="submit" value="${msg("doRegister")}" />                                    
+                                <button class="login100-form-btn" type="submit">
+                                    ${msg("doRegister")}
+                                </button>                                    
                             </div>
             
                             <!-- <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
