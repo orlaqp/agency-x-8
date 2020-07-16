@@ -2964,6 +2964,13 @@
 	transform: translateY(-50%);
 }
 
+.ab-t-l-height {
+	position: absolute;
+	left: 0px;
+    top: 0px;
+    height: 120%;
+}
+
 .ab-t-l {
 	position: absolute;
 	left: 0px;

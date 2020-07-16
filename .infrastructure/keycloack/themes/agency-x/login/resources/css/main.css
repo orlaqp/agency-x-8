@@ -70,6 +70,17 @@ a:hover {
     overflow: hidden;
 }
 
+.light-background {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-45%, -55%);
+  	-moz-transform: translate(-45%, -55%);
+  	-ms-transform: translate(-45%, -55%);
+  	-o-transform: translate(-45%, -55%);
+	transform: translate(-45%, -55%);
+}
+
 .form-container {
     min-width: 650px;
     /* background-color: whitesmoke; */

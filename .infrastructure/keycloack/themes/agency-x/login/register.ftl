@@ -1,18 +1,18 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout; section>
     <#if section = "header">
-        ${msg("registerTitle")} 
+        
     <#elseif section = "form">
 
-        <img src="${url.resourcesPath}/${properties.kcLoginPageBackgroundImage}" alt="" class="ab-t-l">
+        <img src="${url.resourcesPath}/${properties.kcLoginPageBackgroundImage}" alt="" class="ab-t-l-height" />
+        <img class="${properties.kcLoginBackgroundImageClass}" src="${url.resourcesPath}/${properties.kcLoginBackgroundImage}" alt="" />        
 
         <div class="${properties.kcLoginClass!}">
             <div class="${properties.kcLoginFormContainerClass!}">    
-                <img class="${properties.kcLoginBackgroundImageClass}" src="${url.resourcesPath}/${properties.kcLoginBackgroundImage}" alt="">        
                 <div>
                     <div class="js-tilt" data-tilt>
                         <!-- <img src="images/013.png" alt="IMG"> -->
-                        <img class="${properties.kcLoginIllustrationClass}" src="${url.resourcesPath}/${properties.kcLoginIllustration}" alt="IMG">
+                        <img class="${properties.kcLoginIllustrationClass}" src="${url.resourcesPath}/${properties.kcSignupIllustration}" alt="IMG">
                     </div>
                 </div>
                 <div>

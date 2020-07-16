@@ -19,16 +19,6 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
-    <#if properties.scripts?has_content>
-        <#list properties.scripts?split(' ') as script>
-            <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
-        </#list>
-    </#if>
-    <#if scripts??>
-        <#list scripts as script>
-            <script src="${script}" type="text/javascript"></script>
-        </#list>
-    </#if>
 </head>
 
 <body class="${properties.kcBodyClass!}">
@@ -142,6 +132,18 @@
 
     </div>
   </div>
+
+  <#if properties.scripts?has_content>
+        <#list properties.scripts?split(' ') as script>
+            <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
+        </#list>
+    </#if>
+    <#if scripts??>
+        <#list scripts as script>
+            <script src="${script}" type="text/javascript"></script>
+        </#list>
+    </#if>
+    
 </body>
 </html>
 </#macro>
