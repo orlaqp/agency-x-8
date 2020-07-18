@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Select } from '@ngxs/store';
-import { AuthState, OidcUser } from '@agency-x/auth/data-access';
+import { AuthState, OidcUser, AuthService } from '@agency-x/auth/data-access';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-import { OidcSecurityService } from 'angular-auth-oidc-client';
+
 
 @Component({
     selector: 'agency-x-landing',
@@ -20,7 +20,7 @@ export class LandingComponent implements OnInit, OnDestroy {
 
     constructor(
         private router: Router,
-        private oidcSecurityService: OidcSecurityService
+        private authService: AuthService
     ) {}
 
     
@@ -37,6 +37,10 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
 
     signIn() {
-        this.oidcSecurityService.authorize();
+        this.authService.authorize();
+    }
+
+    register() {
+        this.authService.goToRegistration();
     }
 }

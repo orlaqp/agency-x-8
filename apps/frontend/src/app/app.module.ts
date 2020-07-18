@@ -9,24 +9,15 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { map, switchMap, filter } from 'rxjs/operators';
-import { AuthModule, EventTypes, LogLevel, OidcConfigService, PublicEventsService } from 'angular-auth-oidc-client';
+import { filter } from 'rxjs/operators';
+import { AuthModule, EventTypes, OidcConfigService, PublicEventsService } from 'angular-auth-oidc-client';
 import { AuthDataAccessModule } from '@agency-x/auth/data-access'; 
 
+const w = window || {};
+const browserEnv = w['__env'] || {};
+
 export function configureAuth(oidcConfigService: OidcConfigService) {
-    return () => {
-        return oidcConfigService.withConfig({
-            stsServer: 'http://127.0.0.1:8080/auth/realms/agency-x',
-            redirectUrl: window.location.origin,
-            postLogoutRedirectUri: window.location.origin,
-            clientId: 'web-app',
-            scope: 'openid profile email phone offline_access',
-            responseType: 'code',
-            silentRenew: true,
-            useRefreshToken: true,
-            logLevel: LogLevel.Debug,
-        });
-    }
+    return () => oidcConfigService.withConfig(browserEnv.oidcConfig)
 }
 
 @NgModule({
