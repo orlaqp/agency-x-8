@@ -1,6 +1,7 @@
 import { State, Action, Selector, StateContext } from '@ngxs/store';
 import { UpdateUserAction } from './auth.actions';
 import { OidcUser } from '../interfaces';
+import { Injectable } from '@angular/core';
 
 export interface AuthStateModel {
   user: OidcUser;
@@ -12,6 +13,7 @@ export interface AuthStateModel {
     user: null
   }
 })
+@Injectable()
 export class AuthState {
 
   @Selector()
