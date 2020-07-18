@@ -48,6 +48,7 @@
     "@ngxs/storage-plugin": "^3.6.2",
     "@ngxs/store": "^3.6.2",
     "@nrwl/angular": "^9.5.1",
+    "@schematics/angular": "^9.1.2",
     "angular-auth-oidc-client": "^11.1.4",
     "core-js": "^2.5.4",
     "rxjs": "~6.6.0",
