@@ -1,28 +1,54 @@
+@import 'mixins';
+
 :host {
     background-size: cover;
     height: 100vh;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    // align-items: flex-end;
+}
+
+.top-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80rem;           
+}
+
+.illustration {
+    position: absolute;
+    right: 4rem;
+    top: 10rem;
+    width: 75rem;
+}
+
+button.signin-btn {
+    @include borderRadius(25px);
+    margin-left: 3rem;
+    padding: 0 3rem;
+}
+
+button.get-started-btn {
+    @include borderRadius(25px);
+    margin-top: 2rem;
+    padding: 5px 4rem;
+    font-size: 1.5rem;
 }
 
 .landing-header {
-    flex: 0 0 50px;
     margin: 2rem 3rem;
 }
 
-.landing-body {
-    flex: 1 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.logo {
+    &__image {
+        width: 15rem;
+    }
 }
 
 .signup {
     flex: 0 0 auto;
     width: 40rem;
-    margin-right: 80px;
+    margin: 4rem;
 }
 

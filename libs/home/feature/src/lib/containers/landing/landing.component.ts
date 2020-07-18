@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Select } from '@ngxs/store';
 import { AuthState, OidcUser } from '@agency-x/auth/data-access';
@@ -9,7 +9,7 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 @Component({
     selector: 'agency-x-landing',
     templateUrl: './landing.component.html',
-    styleUrls: ['./landing.component.scss'],
+    styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit, OnDestroy {
     @Select(AuthState.getUser)

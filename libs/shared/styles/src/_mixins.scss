@@ -1,0 +1,348 @@
+// Global Variables
+
+$narrowPrefixes: -webkit-, -moz-, '';
+$defaultPrefixes: -webkit-, -moz-, -o-, '';
+$extendedPrefixes: -webkit-, -moz-, -ms-, -o-, '';
+
+// Change material icon size
+@mixin mat-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    // line-height: $size;
+}
+
+// Propert: border-radius
+
+@mixin borderRadius($size...) {
+    @if length($size) ==1 {
+        @each $prefix in $defaultPrefixes {
+            #{$prefix}border-radius: $size;
+        }
+    } @else {
+        @include customBorderRadius($size...);
+    }
+}
+
+@mixin customBorderRadius($topLeft: 0, $topRight: 0, $bottomRight: 0, $bottomLeft: 0) {
+    @each $prefix in $defaultPrefixes {
+        @if $prefix== '-moz-' {
+            @if $topLeft !=0 {
+                -moz-border-radius-topleft: $topLeft;
+            }
+
+            @if $topRight !=0 {
+                -moz-border-radius-topright: $topRight;
+            }
+
+            @if $bottomRight !=0 {
+                -moz-border-radius-bottomright: $bottomRight;
+            }
+
+            @if $bottomLeft !=0 {
+                -moz-border-radius-bottomleft: $bottomLeft;
+            }
+        } @else {
+            @if $topLeft !=0 {
+                #{$prefix}border-top-left-radius: $topLeft;
+            }
+
+            @if $topRight !=0 {
+                #{$prefix}border-top-right-radius: $topRight;
+            }
+
+            @if $bottomRight !=0 {
+                #{$prefix}border-bottom-right-radius: $bottomRight;
+            }
+
+            @if $bottomLeft !=0 {
+                #{$prefix}border-bottom-left-radius: $bottomLeft;
+            }
+        }
+    }
+}
+
+// Property: user-select
+
+@mixin selection($type) {
+    @each $prefix in $defaultPrefixes {
+        #{$prefix}user-select: $type;
+    }
+}
+
+@mixin noSelection {
+    @include selection(none);
+}
+
+// Propert: box-sizing
+
+@mixin boxSizing($type: border-box) {
+    @each $prefix in $defaultPrefixes {
+        #{$prefix}box-sizing: $type;
+    }
+}
+
+@mixin noBoxSizing() {
+    @include boxSizing(content-box !important);
+}
+
+// Property: background
+// Value: linear-gradient
+
+@mixin linearGradient($properties...) {
+    @each $prefix in $extendedPrefixes {
+        background: #{$prefix}linear-gradient($properties);
+    }
+}
+
+// Property: appearance
+
+@mixin appearance($property) {
+    @each $prefix in $narrowPrefixes {
+        #{$prefix}appearance: $property;
+    }
+}
+
+// Layout: Center node in viewport
+
+@mixin centeredNode($width, $height, $correctTop: 0, $correctLeft: 0) {
+    @include size($width, $height);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: (-$height / 2) + $correctTop;
+    margin-left: (-$width / 2) + $correctLeft;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+// Opacity
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    filter: alpha(opacity=($opacity * 100));
+}
+
+// https://engageinteractive.co.uk/blog/top-10-scss-mixins
+
+// To quickly centre a block element without having to worry about
+// if there is any top or bottom margin already applied.
+
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+// Pseudo
+// When using ::before and ::after you'll always need these three,
+// so we're saving two lines of code every time you use this.
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// Responsive ratio
+// We use this for creating scalable elements
+// (usually images / background images) that maintain a ratio.
+
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+    $padding: unquote(($y / $x) * 100 + '%');
+
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+// Placeholders
+// They're a pain as you have to set the style in all
+// the separate formats, this sorts it for you.
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// Simple and effective for when you need to trigger hardware acceleration
+// for some animation, keeping everything fast, slick and flicker-free.
+@mixin hardware($backface: true, $perspective: 1000) {
+    @if $backface {
+        backface-visibility: hidden;
+    }
+
+    perspective: $perspective;
+}
+
+// Adding Truncation to an element isn't as simple as it should be,
+// although it is with this handy time saver, meaning when you include the mixin,
+// you only have to specify your boundary with a max width value, happy days!
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin center-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $color;
+        -moz-box-shadow: inset $top $left $blur $color;
+        box-shadow: inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+@mixin text-field {
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5em;
+    border-style: none;
+    background-color: transparent;
+}
+
+@mixin button($color: $red, $text_color: $white) {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: 0.5em 2em 0.55em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    @include rounded();
+    @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+
+    color: $text_color !important;
+    font-weight: bold;
+    border: solid 1px darken($color, 18%);
+    background: $color;
+    @include gradient(saturate($color, 15%), darken($color, 15%));
+
+    &:hover {
+        text-decoration: none;
+        background: saturate($color, 10%);
+        @include gradient(saturate($color, 5%), darken($color, 5%));
+    }
+
+    &:active {
+        position: relative;
+        top: 1px;
+        color: saturate($color, 15%);
+        @include gradient(saturate($color, 15%), lighten($color, 15%));
+    }
+}
+
+@mixin rounded($radius: 0.5em) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin gradient($from, $to) {
+    background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background: -moz-linear-gradient(top, $from, $to);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+// MEDIA QUERY MANAGER
+/*
+
+0 - 600px:      Phone
+601 - 900px:    Tablet Portrait
+900 - 1200px:   Tablet Landscape
+[1200-1800]     Normal styles apply
+1800px+         Big Desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography -> general layout > grid > page layout > components
+
+Note: 1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+
+        // 600px
+    }
+
+    @if $breakpoint==tab-port {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+
+        // 900px
+    }
+
+    @if $breakpoint==tab-land {
+        @media (max-width: 75em) {
+            @content;
+        }
+
+        // 1200px
+    }
+
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
+            @content;
+        }
+
+        // 1800px
+    }
+}

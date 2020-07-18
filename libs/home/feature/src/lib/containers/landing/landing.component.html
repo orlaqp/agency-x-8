@@ -1,25 +1,59 @@
-<div class="landing-header">
-    <agency-x-theme-picker></agency-x-theme-picker>
-    <agency-x-language-picker></agency-x-language-picker>
+<img class="top-right-image" src="/assets/images/orange-rectangle.svg" alt="" />
+<img class="illustration" src="/assets/images/car.svg" alt="" />
 
-    <button mat-stroked-button color="secondary" (click)="signIn()">Sign In</button>
+<div class="landing-header" fxFlex="0 1 15rem">
+    <div fxLayout="row" fxLayoutGap="1rem">
+        <div fxFlex></div>
+        <div fxFlex="0 1 auto">
+            <agency-x-theme-picker></agency-x-theme-picker>
+        </div>
+        <div fxFlex="0 1 auto">
+            <agency-x-language-picker></agency-x-language-picker>
+        </div>
+        <div fxFlex="0 1 auto">
+            <button
+                class="signin-btn"
+                mat-button
+                color="secondary"
+                (click)="signIn()"
+            >
+                Sign In
+            </button>
+        </div>
+    </div>
 </div>
 
-<div class="landing-body">
-    <div class="signup">
-        <h2 i18n="application name@@applicationName" class="mat-headline">
-            Agency X
-        </h2>
-        <p i18n="signup paragraph@@signupParagraph" class="mat-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
-            nobis ipsam doloribus, ipsa, facilis iste nisi qui rem deserunt esse
-            libero laborum! Temporibus tempora soluta molestias modi eligendi
-            suscipit labore.
-        </p>
+<div fxFlex class="signup" fxLayout="column" fxLayoutAlign="start start">
+    <div fxFlex="0 1 auto">
+        <div fxFlex="0 1 auto" fxFlexAlign="center">
+            <h2 i18n="application name@@applicationName" class="logo__text">
+                Agency
+            </h2>
+        </div>
+        <div fxFlex>
+            <img src="/assets/images/logo.svg" alt="" class="logo__image" />
+        </div>
+    </div>
+    <div
+        fxFlex="0 1 auto"
+        i18n="signup paragraph@@signupParagraph"
+        class="mat-subheading-2"
+    >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
+        nobis ipsam doloribus, ipsa, facilis iste nisi qui rem deserunt esse
+        libero laborum! Temporibus tempora soluta molestias modi eligendi
+        suscipit labore.
+    </div>
 
-        <agency-x-email-input
-            [formControl]="emailControl"
-            [deboundTime]="300"
-        ></agency-x-email-input>
+    <div fx="0 1 auto">
+        <button
+            class="get-started-btn"
+            mat-button
+            color="secondary"
+            (click)="signIn()"
+        >
+            Get Started
+            <mat-icon aria-hidden="false" aria-label="Example home icon">chevron_right</mat-icon>
+        </button>
     </div>
 </div>

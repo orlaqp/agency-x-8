@@ -1,23 +1,46 @@
+@import 'mixins';
+
 @mixin landing-component-theme($theme) {
     $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
     
-    $start-color: mat-color($primary, 400);
+    $start-color: mat-color($primary, 700);
     $end-color: mat-color($primary, 900);
     $background-color: mat-color($background, dialog);
 
     agency-x-landing {
         background: 
-            linear-gradient(to bottom, rgba($start-color, 0.95), rgba($end-color, 0.95)),
-            url(/assets/images/home/world_travel.png);
+            // linear-gradient(to bottom, rgba($start-color, 0.95), rgba($end-color, 0.95)),
+            url(/assets/images/bg-squares.jpg);
 
-        .email-control {
-            background-color: $background-color;
+        .logo {
 
-            &__input {
-                background-color: transparent;
+            &__text {
+                font-size: 4rem;
+                font-style: italic;
+                font-family: mat-font-family($typography-config);
             }
         }
+
+        button.signin-btn {
+            @include box-shadow(3px, 3px, 25px, rgba(0,0,0,.25));
+            background-color: mat-color($background, card);
+        }
+        
+        button.get-started-btn {
+            @include box-shadow(3px, 3px, 25px, rgba(0,0,0,.25));
+            background: linear-gradient(to right, rgba($start-color, 0.95), rgba($end-color, 0.95));
+            color: mat-color($background, card);
+        }
+
+        // .email-control {
+        //     background-color: $background-color;
+
+        //     &__input {
+        //         background-color: transparent;
+        //     }
+        // }
     }
 
 }

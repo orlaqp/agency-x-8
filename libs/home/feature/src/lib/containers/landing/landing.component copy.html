@@ -1,0 +1,25 @@
+<div class="landing-header">
+    <agency-x-theme-picker></agency-x-theme-picker>
+    <agency-x-language-picker></agency-x-language-picker>
+
+    <button mat-stroked-button color="secondary" (click)="signIn()">Sign In</button>
+</div>
+
+<div class="landing-body">
+    <div class="signup">
+        <h2 i18n="application name@@applicationName" class="mat-headline">
+            Agency X
+        </h2>
+        <p i18n="signup paragraph@@signupParagraph" class="mat-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,
+            nobis ipsam doloribus, ipsa, facilis iste nisi qui rem deserunt esse
+            libero laborum! Temporibus tempora soluta molestias modi eligendi
+            suscipit labore.
+        </p>
+
+        <agency-x-email-input
+            [formControl]="emailControl"
+            [deboundTime]="300"
+        ></agency-x-email-input>
+    </div>
+</div>

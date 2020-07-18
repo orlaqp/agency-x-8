@@ -170,7 +170,7 @@
 
                             <!-- signin link -->
 
-                            <div class="text-center p-t-136">
+                            <div class="text-center p-t-50">
                                 <a class="txt2" href="${url.loginUrl}">
                                     ${kcSanitize(msg("backToLogin"))?no_esc}
                                     <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>

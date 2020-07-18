@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210px" height="210px" viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="94.5072886%" y1="64.2314943%" x2="11.9420735%" y2="55.6429856%" id="linearGradient-1">
+            <stop stop-color="#FAD961" offset="0%"></stop>
+            <stop stop-color="#F76E1E" offset="100%"></stop>
+            <stop stop-color="#F76B1C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M394.51183,216.999 L394.51183,243.146 L376.91483,260.838 L431,315.218 L431,340.638 L430.639468,341 L351,260.928046 L351.13483,260.794 L351.043916,260.702396 L394.51183,216.999 Z M318.816,236 L331.499,248.807797 L331.555288,248.751994 L344.56045,261.884792 L344.504,261.939797 L392,309.901587 L391.901,309.999797 L366.087,309.999797 L331.499,275.072797 L296.912,309.999797 L271.098,309.999797 L271,309.901587 L318.495,261.940797 L292.835636,236.029596 L292.864,236 L318.816,236 Z M292.782,177 L347.162,231.08517 L364.854,213.48817 L391.001,213.48817 L347.297604,256.956084 L347.206,256.86517 L347.071954,257 L267,177.360532 L267.362,177 L292.782,177 Z" id="path-2"></path>
+        <filter x="-23.4%" y="-22.3%" width="146.4%" height="147.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-11" transform="translate(-246.000000, -154.000000)">
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>
