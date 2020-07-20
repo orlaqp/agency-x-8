@@ -5,7 +5,7 @@
     <#elseif section = "form">
 
         <img src="${url.resourcesPath}/${properties.kcLoginPageBackgroundImage}" alt="" class="ab-t-l-height" />
-        <img class="${properties.kcLoginBackgroundImageClass}" src="${url.resourcesPath}/${properties.kcLoginBackgroundImage}" alt="" />        
+        <#--  <img class="${properties.kcLoginBackgroundImageClass}" src="${url.resourcesPath}/${properties.kcLoginBackgroundImage}" alt="" />          -->
 
         <div class="${properties.kcLoginClass!}">
             <div class="${properties.kcLoginFormContainerClass!}">    

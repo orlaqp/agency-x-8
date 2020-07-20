@@ -11,9 +11,8 @@ export class AuthService {
 
     goToRegistration() {
         const oidc = this.envService.oidcConfig;
-        this.router.navigateByUrl(
-            `${oidc.stsServer}/protocol/openid-connect/registrations?client_id=${oidc.clientId}&response_type=code&scope=openid%20email&redirect_uri=${oidc.redirectUrl}&kc_locale=${oidc.locale}`
-        );
+        window.location.href = 
+            `${oidc.stsServer}/protocol/openid-connect/registrations?client_id=${oidc.clientId}&response_type=code&scope=openid%20email&redirect_uri=${oidc.redirectUrl}&kc_locale=${oidc.locale}`;
     }
 
     authorize() {

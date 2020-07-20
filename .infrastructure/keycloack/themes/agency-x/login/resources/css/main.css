@@ -58,7 +58,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #FF0066;
+    color: rgba(255, 111, 0, 0.95);
 }
 
 
@@ -83,9 +83,10 @@ a:hover {
 
 .form-container {
     min-width: 650px;
-    /* background-color: whitesmoke; */
+    background-color: white;
     border-radius: 15px;
     padding: 20px 80px;
+    box-shadow: 1px 1px 25px rgba(0,0,0,.25);
     /* border: 1px solid gray; */
 }
 
@@ -347,7 +348,8 @@ iframe {
   box-shadow: 0px 0px 0px 0px;
   /* color: rgba(87,184,70, 0.8); */
   /* color: #FF0066; */
-  color: #e96b9d;
+  /* color: #e96b9d; */
+  color: rgba(255, 160, 0, 0.95);
 }
 
 .input100:focus + .focus-input100 {
@@ -395,7 +397,7 @@ iframe {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #FF0066;
+  color: rgba(255, 111, 0, 0.95);
   padding-left: 28px;
 }
 
@@ -423,7 +425,7 @@ iframe {
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #FF0066;
+  background: linear-gradient(to right, rgba(255, 160, 0, 0.95), rgba(255, 111, 0, 0.95));;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -440,7 +442,8 @@ iframe {
 }
 
 .login100-form-btn:hover {
-  background: #9c013f;
+  /* background:  #9c013f; */
+  background: linear-gradient(to left, rgba(255, 160, 0, 0.95), rgba(255, 111, 0, 0.95));
 }
 
 

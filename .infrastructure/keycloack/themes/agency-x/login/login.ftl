@@ -5,7 +5,7 @@
     <#elseif section = "form">
 
     <img src="${url.resourcesPath}/${properties.kcLoginPageBackgroundImage}" alt="" class="ab-t-l-height" />
-    <img class="${properties.kcLoginBackgroundImageClass}" src="${url.resourcesPath}/${properties.kcLoginBackgroundImage}" alt="" />        
+    <#--  <img class="${properties.kcLoginBackgroundImageClass}" src="${url.resourcesPath}/${properties.kcLoginBackgroundImage}" alt="" />          -->
 
     <div class="${properties.kcLoginClass!}">
         <div class="${properties.kcLoginFormContainerClass!}">    
@@ -30,9 +30,9 @@
 
                                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                                     <#if usernameEditDisabled??>
-                                        <input tabindex="1" id="username" class="${properties.kcInputClass!} input100" name="username" value="${(login.username!'')}" type="text" placeholder="Email" disabled />
+                                        <input tabindex="1" id="username" class="${properties.kcInputClass!} input100" name="username" value="${(login.username!'')}" type="text" placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>" disabled />
                                     <#else>
-                                        <input tabindex="1" id="username" class="${properties.kcInputClass!} input100" name="username" value="${(login.username!'')}" type="text" autocomplete="off" autofocus placeholder="Email" />                                        
+                                        <input tabindex="1" id="username" class="${properties.kcInputClass!} input100" name="username" value="${(login.username!'')}" type="text" autocomplete="off" autofocus placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>" />                                        
                                     </#if>
                                     <span class="focus-input100"></span>
                                     <span class="symbol-input100">
@@ -91,6 +91,7 @@
                                 </div>
 
                                 <div class="container-login100-form-btn">
+                                    <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
                                     <button class="login100-form-btn" name="login" id="kc-login" type="submit">
                                         ${msg("doLogIn")}
                                     </button>
