@@ -25,21 +25,19 @@ export class AuthState {
         private store: Store
     ) {
 
-        this.eventService
-            .registerForEvents()
-            .pipe(filter((notification) => notification.type === EventTypes.CheckSessionReceived))
-            .subscribe((config) => {
-                debugger;
-                console.log('ConfigLoaded', config);
-            });
+        // this.eventService
+        //     .registerForEvents()
+        //     .pipe(filter((notification) => notification.type === EventTypes.UserDataChanged))
+        //     .subscribe((data) => {
+        //         console.log('USER DATA CHANGED', data);
+        //     });
 
         this.oidcSecurityService.isAuthenticated$.subscribe((isAuth) => {
-            debugger;
-            console.log('IS AUTHENTICATED: ' + isAuth);
+            console.warn('IS AUTHENTICATED: ' + isAuth);
         });
 
         this.oidcSecurityService.userData$.subscribe((data: OidcUser) => {
-            debugger;
+            console.warn('USER DATA CHANGED', data);
             this.store.dispatch(new UpdateUserAction(data));
         });
 

@@ -7,7 +7,9 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
     providedIn: 'root',
 })
 export class AuthService {
-    constructor(private router: Router, private envService: EnvService, private oidcSecurityService: OidcSecurityService) {}
+    constructor(private router: Router, private envService: EnvService, private oidcSecurityService: OidcSecurityService) {
+        
+    }
 
     goToRegistration() {
         const oidc = this.envService.oidcConfig;

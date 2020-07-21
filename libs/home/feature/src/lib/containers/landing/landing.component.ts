@@ -4,6 +4,7 @@ import { Select } from '@ngxs/store';
 import { AuthState, OidcUser, AuthService } from '@agency-x/auth/data-access';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 
 
 @Component({
@@ -20,14 +21,22 @@ export class LandingComponent implements OnInit, OnDestroy {
 
     constructor(
         private router: Router,
-        private authService: AuthService
+        private authService: AuthService,
+        private oidcSecurityService: OidcSecurityService
     ) {}
 
     
     ngOnInit() {
-        this.user$.subscribe(u => {
-            if (u) this.router.navigateByUrl('/home');
-        })
+        // this.user$.subscribe(u => {
+        //     if (u) {
+        //         console.log('REDIRECTING USER TO HOME PAGE');
+        //         this.router.navigateByUrl('/home');
+        //     }
+        // })
+
+        this.oidcSecurityService.isAuthenticated$.subscribe((isAuth) => {
+            if (isAuth) this.router.navigateByUrl('/home');
+        });
     }
 
     ngOnDestroy(): void {

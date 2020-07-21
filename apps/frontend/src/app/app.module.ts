@@ -12,7 +12,7 @@ import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { filter } from 'rxjs/operators';
 import { AuthModule, EventTypes, OidcConfigService, PublicEventsService } from 'angular-auth-oidc-client';
-import { AuthDataAccessModule } from '@agency-x/auth/data-access'; 
+import { AuthDataAccessModule, AuthorizationGuard } from '@agency-x/auth/data-access'; 
 import { UnauthorizedComponent } from '@agency-x/auth/feature';
 
 const w = window || {};
@@ -33,7 +33,8 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
           loadChildren: () =>
             import('@agency-x/home/feature').then(
               module => module.HomeFeatureModule
-            )
+            ),
+            // canActivate: [ AuthorizationGuard ]
         },
         { path: 'forbidden', component: UnauthorizedComponent },
         { path: 'unauthorized', component: UnauthorizedComponent },

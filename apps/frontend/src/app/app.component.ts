@@ -15,10 +15,14 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.oidcSecurityService
-            .checkAuthIncludingServer()
+            .checkAuth()
+            // .checkAuthIncludingServer()
             .subscribe((isAuthenticated) => {
                 debugger;
-                console.log('app authenticated', isAuthenticated);
+                console.warn('app authenticated', isAuthenticated);
             });
+
+        this.oidcSecurityService.isAuthenticated$.subscribe(u => console.log('**** IS AUTHENTICATED **** : ' + u));
+        this.oidcSecurityService.userData$.subscribe(u => console.log('**** USER DATA **** : ' + u));
     }
 }
