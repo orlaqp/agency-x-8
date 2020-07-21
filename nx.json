@@ -1,57 +1,60 @@
 {
-  "npmScope": "agency-x",
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+    "npmScope": "agency-x",
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
     },
-    "tsconfig.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
-  },
-  "projects": {
-    "frontend": {
-      "tags": []
+    "projects": {
+        "frontend": {
+            "tags": []
+        },
+        "frontend-e2e": {
+            "tags": [],
+            "implicitDependencies": ["frontend"]
+        },
+        "home-feature": {
+            "tags": []
+        },
+        "theme-picker": {
+            "tags": []
+        },
+        "angular-material": {
+            "tags": []
+        },
+        "config-frontend": {
+            "tags": []
+        },
+        "shared-shared": {
+            "tags": []
+        },
+        "language-picker": {
+            "tags": []
+        },
+        "email-input": {
+            "tags": []
+        },
+        "shared-data-access": {
+            "tags": []
+        },
+        "auth-data-access": {
+            "tags": []
+        },
+        "auth-feature": {
+            "tags": []
+        }
     },
-    "frontend-e2e": {
-      "tags": [],
-      "implicitDependencies": ["frontend"]
-    },
-    "home-feature": {
-      "tags": []
-    },
-    "theme-picker": {
-      "tags": []
-    },
-    "angular-material": {
-      "tags": []
-    },
-    "config-frontend": {
-      "tags": []
-    },
-    "shared-shared": {
-      "tags": []
-    },
-    "language-picker": {
-      "tags": []
-    },
-    "email-input": {
-      "tags": []
-    },
-    "shared-data-access": {
-      "tags": []
-    },
-    "auth-data-access": {
-      "tags": []
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/workspace/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"]
+            }
+        }
     }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
-  }
 }

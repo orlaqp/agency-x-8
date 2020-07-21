@@ -1,31 +1,38 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@agency-x/home/feature": ["libs/home/feature/src/index.ts"],
-      "@agency-x/theme-picker": ["libs/theme-picker/src/index.ts"],
-      "@agency-x/angular-material": ["libs/angular-material/src/index.ts"],
-      "@agency-x/config/frontend": ["libs/config/frontend/src/index.ts"],
-      "@agency-x/shared/shared": ["libs/shared/shared/src/index.ts"],
-      "@agency-x/language-picker": ["libs/language-picker/src/index.ts"],
-      "@agency-x/email-input": ["libs/email-input/src/index.ts"],
-      "@agency-x/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@agency-x/auth/data-access": ["libs/auth/data-access/src/index.ts"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@agency-x/home/feature": ["libs/home/feature/src/index.ts"],
+            "@agency-x/theme-picker": ["libs/theme-picker/src/index.ts"],
+            "@agency-x/angular-material": [
+                "libs/angular-material/src/index.ts"
+            ],
+            "@agency-x/config/frontend": ["libs/config/frontend/src/index.ts"],
+            "@agency-x/shared/shared": ["libs/shared/shared/src/index.ts"],
+            "@agency-x/language-picker": ["libs/language-picker/src/index.ts"],
+            "@agency-x/email-input": ["libs/email-input/src/index.ts"],
+            "@agency-x/shared/data-access": [
+                "libs/shared/data-access/src/index.ts"
+            ],
+            "@agency-x/auth/data-access": [
+                "libs/auth/data-access/src/index.ts"
+            ],
+            "@agency-x/auth/feature": ["libs/auth/feature/src/index.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

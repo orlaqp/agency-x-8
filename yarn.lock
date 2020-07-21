@@ -1617,6 +1617,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ngxs/router-plugin@^3.6.2":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/router-plugin/-/router-plugin-3.6.2.tgz#058b09565011203bbf52294f16f29f9337aeaa27"
+  integrity sha512-5J3G9+Qsy/s7iqFivzAN1S6EmaZYTb9hqz7Xjn3c0u3Y44VMP5VWiz77jZ/eowXX0slJywcMxk6oCEFPwz4lXQ==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngxs/schematics@^0.0.1-alpha.5":
   version "0.0.1-alpha.5"
   resolved "https://registry.yarnpkg.com/@ngxs/schematics/-/schematics-0.0.1-alpha.5.tgz#014bd731e28a30f63065e8dadec2c02ef320df46"
