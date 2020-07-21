@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AuthService } from '@agency-x/auth/data-access';
 
 @Component({
   selector: 'agency-x-unauthorized',
@@ -8,9 +9,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class UnauthorizedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+      this.authService.authorize();
   }
 
 }

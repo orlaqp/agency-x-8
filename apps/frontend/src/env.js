@@ -66,7 +66,8 @@
     silentRenew: true,
     useRefreshToken: true,
     logLevel: 1,
-    locale: 'en'
+    locale: 'en',
+    postLogoutRedirectUri: `${window.location.origin}/unauthorized`
   }
 
   window.__env = {

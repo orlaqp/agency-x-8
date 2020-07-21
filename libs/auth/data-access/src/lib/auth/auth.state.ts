@@ -59,7 +59,6 @@ export class AuthState {
         ctx: StateContext<AuthStateModel>,
         { payload: user }: UpdateUserAction
     ) {
-        debugger;
         ctx.patchState({ user });
     }
 }

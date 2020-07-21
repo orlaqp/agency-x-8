@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
             .checkAuth()
             // .checkAuthIncludingServer()
             .subscribe((isAuthenticated) => {
-                debugger;
                 console.warn('app authenticated', isAuthenticated);
             });
 

@@ -7,6 +7,10 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
     providedIn: 'root',
 })
 export class AuthService {
+
+    isAuthenticated$ = this.oidcSecurityService.isAuthenticated$;
+    userData$ = this.oidcSecurityService.userData$;
+
     constructor(private router: Router, private envService: EnvService, private oidcSecurityService: OidcSecurityService) {
         
     }
@@ -19,5 +23,9 @@ export class AuthService {
 
     authorize() {
         this.oidcSecurityService.authorize();
+    }
+
+    logoff() {
+        this.oidcSecurityService.logoff();
     }
 }
