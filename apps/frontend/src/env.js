@@ -59,7 +59,7 @@
   oidcConfig = {
     stsServer: 'http://127.0.0.1:8080/auth/realms/agency-x',
     redirectUrl: window.location.origin,
-    postLogoutRedirectUri: window.location.origin,
+    // postLogoutRedirectUri: window.location.origin,
     clientId: 'web-app',
     scope: 'openid profile email phone offline_access',
     responseType: 'code',

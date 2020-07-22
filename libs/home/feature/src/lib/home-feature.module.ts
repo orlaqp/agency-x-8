@@ -8,6 +8,7 @@ import { EmailInputModule } from '@agency-x/email-input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '@agency-x/angular-material';
 import { HomeComponent } from './containers/home/home.component';
+import { AuthorizationGuard } from '@agency-x/auth/data-access';
 
 @NgModule({
   imports: [
@@ -19,8 +20,9 @@ import { HomeComponent } from './containers/home/home.component';
     ReactiveFormsModule,
 
     RouterModule.forChild([
-      {path: '', pathMatch: 'full', component: LandingComponent},
-      {path: 'home', pathMatch: 'full', component: HomeComponent}
+      {path: '', pathMatch: 'full', component: HomeComponent
+      , canActivate: [ AuthorizationGuard ]
+    }
     ])
   ],
   declarations: [LandingComponent, HomeComponent]

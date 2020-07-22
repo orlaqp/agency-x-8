@@ -6,7 +6,10 @@ import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthorizationGuard implements CanActivate {
-    constructor(private oidcSecurityService: OidcSecurityService, private router: Router) {}
+    constructor(
+        private oidcSecurityService: OidcSecurityService,
+        private router: Router
+    ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
         // return checkAuth() again should be possible
@@ -17,7 +20,7 @@ export class AuthorizationGuard implements CanActivate {
                 if (!isAuthorized) {
                     // this.oidcSecurityService.authorize();
                     // this.router.navigate(['/unauthorized']);
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/auto-login']);
                     return false;
                 }
 

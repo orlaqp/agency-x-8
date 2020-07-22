@@ -26,9 +26,9 @@ export class LandingComponent implements OnInit, OnDestroy {
 
     
     ngOnInit() {
-        this.authService.isAuthenticated$.subscribe((isAuth) => {
-            if (isAuth) this.router.navigateByUrl('/home');
-        });
+        // this.authService.isAuthenticated$.subscribe((isAuth) => {
+        //     if (isAuth) this.router.navigateByUrl('/home');
+        // });
     }
 
     ngOnDestroy(): void {
