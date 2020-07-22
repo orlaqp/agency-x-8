@@ -47,6 +47,9 @@
         },
         "auth-feature": {
             "tags": []
+        },
+        "navigation-feature": {
+            "tags": []
         }
     },
     "tasksRunnerOptions": {

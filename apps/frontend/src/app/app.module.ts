@@ -19,10 +19,10 @@ import {
 } from 'angular-auth-oidc-client';
 import {
     AuthDataAccessModule,
-    AuthorizationGuard,
 } from '@agency-x/auth/data-access';
-import { UnauthorizedComponent, AuthFeatureModule } from '@agency-x/auth/feature';
-import { LandingComponent } from 'libs/home/feature/src/lib/containers/landing/landing.component';
+import { AuthFeatureModule } from '@agency-x/auth/feature';
+import { NavigationFeatureModule } from '@agency-x/navigation/feature';
+import { LandingComponent } from '@agency-x/home/feature';
 
 const w = window || {};
 const browserEnv = w['__env'] || {};
@@ -53,14 +53,16 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
         ConfigFrontendModule,
         // Auth
         AuthModule.forRoot(),
-        AuthDataAccessModule,
-        AuthFeatureModule,
         // Ngxs
         NgxsModule.forRoot([]),
         NgxsStoragePluginModule.forRoot(),
         NgxsLoggerPluginModule.forRoot(),
         NgxsRouterPluginModule.forRoot(),
         NgxsReduxDevtoolsPluginModule.forRoot(),
+        // features / data access
+        AuthDataAccessModule,
+        AuthFeatureModule,
+        // NavigationFeatureModule,
     ],
     providers: [
         OidcConfigService,

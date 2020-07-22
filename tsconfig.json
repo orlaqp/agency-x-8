@@ -31,7 +31,10 @@
             "@agency-x/auth/data-access": [
                 "libs/auth/data-access/src/index.ts"
             ],
-            "@agency-x/auth/feature": ["libs/auth/feature/src/index.ts"]
+            "@agency-x/auth/feature": ["libs/auth/feature/src/index.ts"],
+            "@agency-x/navigation/feature": [
+                "libs/navigation/feature/src/index.ts"
+            ]
         }
     },
     "exclude": ["node_modules", "tmp"]
