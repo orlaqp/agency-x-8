@@ -1,41 +1,17 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
 {
-    "compileOnSave": false,
-    "compilerOptions": {
-        "rootDir": ".",
-        "sourceMap": true,
-        "declaration": false,
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "importHelpers": true,
-        "target": "es2015",
-        "module": "esnext",
-        "typeRoots": ["node_modules/@types"],
-        "lib": ["es2017", "dom"],
-        "skipLibCheck": true,
-        "skipDefaultLibCheck": true,
-        "baseUrl": ".",
-        "paths": {
-            "@agency-x/home/feature": ["libs/home/feature/src/index.ts"],
-            "@agency-x/theme-picker": ["libs/theme-picker/src/index.ts"],
-            "@agency-x/angular-material": [
-                "libs/angular-material/src/index.ts"
-            ],
-            "@agency-x/config/frontend": ["libs/config/frontend/src/index.ts"],
-            "@agency-x/shared/shared": ["libs/shared/shared/src/index.ts"],
-            "@agency-x/language-picker": ["libs/language-picker/src/index.ts"],
-            "@agency-x/email-input": ["libs/email-input/src/index.ts"],
-            "@agency-x/shared/data-access": [
-                "libs/shared/data-access/src/index.ts"
-            ],
-            "@agency-x/auth/data-access": [
-                "libs/auth/data-access/src/index.ts"
-            ],
-            "@agency-x/auth/feature": ["libs/auth/feature/src/index.ts"],
-            "@agency-x/navigation/feature": [
-                "libs/navigation/feature/src/index.ts"
-            ]
-        }
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/frontend/tsconfig.app.json"
     },
-    "exclude": ["node_modules", "tmp"]
+    {
+      "path": "./apps/frontend-e2e/tsconfig.e2e.json"
+    }
+  ]
 }
