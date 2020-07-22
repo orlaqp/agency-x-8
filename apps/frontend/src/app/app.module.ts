@@ -23,6 +23,7 @@ import {
 import { AuthFeatureModule } from '@agency-x/auth/feature';
 import { NavigationFeatureModule } from '@agency-x/navigation/feature';
 import { LandingComponent } from '@agency-x/home/feature';
+import { AngularMaterialModule } from '@agency-x/angular-material';
 
 const w = window || {};
 const browserEnv = w['__env'] || {};
@@ -60,6 +61,7 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
         NgxsRouterPluginModule.forRoot(),
         NgxsReduxDevtoolsPluginModule.forRoot(),
         // features / data access
+        AngularMaterialModule,
         AuthDataAccessModule,
         AuthFeatureModule,
         // NavigationFeatureModule,

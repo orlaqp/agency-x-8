@@ -1,0 +1,272 @@
+@use 'sass:map';
+@use 'variants' as * with (
+  $breakpoints: (
+    'small': 640px,
+    'medium': 768px,
+    'large': 1024px,
+    'wide': 1280px,
+  )
+);
+
+// ASCII Art Generator
+// http://www.patorjk.com/software/taag/#p=display&v=0&f=ANSI%20Shadow&t=variant
+
+
+// ██████╗  █████╗ ███╗   ██╗ █████╗ ███╗   ██╗ █████╗
+// ██╔══██╗██╔══██╗████╗  ██║██╔══██╗████╗  ██║██╔══██╗
+// ██████╔╝███████║██╔██╗ ██║███████║██╔██╗ ██║███████║
+// ██╔══██╗██╔══██║██║╚██╗██║██╔══██║██║╚██╗██║██╔══██║
+// ██████╔╝██║  ██║██║ ╚████║██║  ██║██║ ╚████║██║  ██║
+// ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
+
+.banana {
+  @include variants('responsive' 'hover' 'group-hover') {
+    color: #FFE135;
+  }
+}
+
+
+// ████████╗███████╗██╗  ██╗████████╗
+// ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
+//    ██║   █████╗   ╚███╔╝    ██║
+//    ██║   ██╔══╝   ██╔██╗    ██║
+//    ██║   ███████╗██╔╝ ██╗   ██║
+//    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
+
+$text: (
+  'left': left,
+  'right': right,
+  'center': center,
+  'justify': justify,
+);
+
+.text {
+  @include options($text, 'responsive') using ($value) {
+    text-align: $value;
+  }
+}
+
+
+// ███████╗██████╗  █████╗  ██████╗██╗███╗   ██╗ ██████╗ 
+// ██╔════╝██╔══██╗██╔══██╗██╔════╝██║████╗  ██║██╔════╝ 
+// ███████╗██████╔╝███████║██║     ██║██╔██╗ ██║██║  ███╗
+// ╚════██║██╔═══╝ ██╔══██║██║     ██║██║╚██╗██║██║   ██║
+// ███████║██║     ██║  ██║╚██████╗██║██║ ╚████║╚██████╔╝
+// ╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+
+$spacing: (
+  'px': 1px,
+  '0': 0,
+  '1': .25rem,
+  '2': .5rem,
+  '3': .75rem,
+  '4': 1rem,
+  '5': 1.25rem,
+  '6': 1.5rem,
+  '8': 2rem,
+  '10': 2.5rem,
+  '12': 3rem,
+  '16': 4rem,
+  '20': 5rem,
+  '24': 6rem,
+  '32': 8rem,
+  '40': 10rem,
+  '48': 12rem,
+  '56': 14rem,
+  '64': 16rem,
+);
+
+// Add auto to the positive margin classes
+$margin: map.merge((
+  'auto': auto
+), $spacing);
+
+@include variants('responsive') using ($props...) {
+
+  // ██████╗  █████╗ ██████╗ ██████╗ ██╗███╗   ██╗ ██████╗
+  // ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║██╔════╝
+  // ██████╔╝███████║██║  ██║██║  ██║██║██╔██╗ ██║██║  ███╗
+  // ██╔═══╝ ██╔══██║██║  ██║██║  ██║██║██║╚██╗██║██║   ██║
+  // ██║     ██║  ██║██████╔╝██████╔╝██║██║ ╚████║╚██████╔╝
+  // ╚═╝     ╚═╝  ╚═╝╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝
+
+  .p {
+    @include options($spacing, $props...) using ($value) {
+      padding: $value;
+    }
+  }
+
+  .px {
+    @include options($spacing, $props...) using ($value) {
+      padding-right: $value;
+      padding-left: $value;
+    }
+  }
+
+  .py {
+    @include options($spacing, $props...) using ($value) {
+      padding-bottom: $value;
+      padding-top: $value;
+    }
+  }
+
+  .pt {
+    @include options($spacing, $props...) using ($value) {
+      padding-top: $value;
+    }
+  }
+
+  .pr {
+    @include options($spacing, $props...) using ($value) {
+      padding-right: $value;
+    }
+  }
+
+  .pb {
+    @include options($spacing, $props...) using ($value) {
+      padding-bottom: $value;
+    }
+  }
+
+  .pl {
+    @include options($spacing, $props...) using ($value) {
+      padding-left: $value;
+    }
+  }
+
+
+  // ███╗   ███╗ █████╗ ██████╗  ██████╗ ██╗███╗   ██╗
+  // ████╗ ████║██╔══██╗██╔══██╗██╔════╝ ██║████╗  ██║
+  // ██╔████╔██║███████║██████╔╝██║  ███╗██║██╔██╗ ██║
+  // ██║╚██╔╝██║██╔══██║██╔══██╗██║   ██║██║██║╚██╗██║
+  // ██║ ╚═╝ ██║██║  ██║██║  ██║╚██████╔╝██║██║ ╚████║
+  // ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝
+
+  .m {
+    @include options($margin, $props...) using ($value) {
+      margin: $value;
+    }
+  }
+
+  .mx {
+    @include options($margin, $props...) using ($value) {
+      margin-right: $value;
+      margin-left: $value;
+    }
+  }
+
+  .my {
+    @include options($margin, $props...) using ($value) {
+      margin-bottom: $value;
+      margin-top: $value;
+    }
+  }
+
+  .mt {
+    @include options($margin, $props...) using ($value) {
+      margin-top: $value;
+    }
+  }
+
+  .mr {
+    @include options($margin, $props...) using ($value) {
+      margin-right: $value;
+    }
+  }
+
+  .mb {
+    @include options($margin, $props...) using ($value) {
+      margin-bottom: $value;
+    }
+  }
+
+  .-ml {
+    @include options($margin, $props...) using ($value) {
+      margin-left: $value;
+    }
+  }
+
+
+  //       ███╗   ███╗ █████╗ ██████╗  ██████╗ ██╗███╗   ██╗
+  //       ████╗ ████║██╔══██╗██╔══██╗██╔════╝ ██║████╗  ██║
+  // █████╗██╔████╔██║███████║██████╔╝██║  ███╗██║██╔██╗ ██║
+  // ╚════╝██║╚██╔╝██║██╔══██║██╔══██╗██║   ██║██║██║╚██╗██║
+  //       ██║ ╚═╝ ██║██║  ██║██║  ██║╚██████╔╝██║██║ ╚████║
+  //       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝
+
+  .-m {
+    @include options($spacing, $props...) using ($value) {
+      margin: -$value;
+    }
+  }
+
+  .-mx {
+    @include options($spacing, $props...) using ($value) {
+      margin-right: -$value;
+      margin-left: -$value;
+    }
+  }
+
+  .-my {
+    @include options($spacing, $props...) using ($value) {
+      margin-bottom: -$value;
+      margin-top: -$value;
+    }
+  }
+
+  .-mt {
+    @include options($spacing, $props...) using ($value) {
+      margin-top: -$value;
+    }
+  }
+
+  .-mr {
+    @include options($spacing, $props...) using ($value) {
+      margin-right: -$value;
+    }
+  }
+
+  .-mb {
+    @include options($spacing, $props...) using ($value) {
+      margin-bottom: -$value;
+    }
+  }
+
+  .-ml {
+    @include options($spacing, $props...) using ($value) {
+      margin-left: -$value;
+    }
+  }
+}
+
+
+// ██╗      █████╗ ██╗   ██╗ ██████╗ ██╗   ██╗████████╗
+// ██║     ██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║╚══██╔══╝
+// ██║     ███████║ ╚████╔╝ ██║   ██║██║   ██║   ██║   
+// ██║     ██╔══██║  ╚██╔╝  ██║   ██║██║   ██║   ██║   
+// ███████╗██║  ██║   ██║   ╚██████╔╝╚██████╔╝   ██║   
+// ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝    ╚═╝   
+
+$display: (
+  'block': block,
+  'inline-block': inline-block,
+  'inline': inline,
+  'flex': flex,
+  'inline-flex': inline-flex,
+  'grid': grid,
+  'inline-grid': inline-grid,
+  'hidden': none,
+) !default;
+
+@include options($display, 'responsive') using ($value) {
+  display: $value;
+}
+
+
+h-100 {
+    height: 100%;
+}
+
+w-100 {
+    width: 100%;
+}

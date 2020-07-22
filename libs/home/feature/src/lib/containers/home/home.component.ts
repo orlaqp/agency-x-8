@@ -8,6 +8,7 @@ import { AuthService } from '@agency-x/auth/data-access';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
+    showFiller = false;
 
   constructor(private authService: AuthService) { }
 
