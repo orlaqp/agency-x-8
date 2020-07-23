@@ -1,0 +1,34 @@
+@import 'mixins';
+
+@mixin sidebar-component-theme($theme, $extraColorMap) {
+    $primary: map-get($theme, primary);
+    $hover-color: mat-color($primary, 500);
+    
+    // $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $selected-bg-color: mat-color($background, 500);
+
+    $icon-color: map-get($map: $extraColorMap, $key: backgroundDarker);
+
+    $menu-item-size: 8rem;
+
+    agency-x-sidebar {
+        .default {
+            color: rgba($icon-color, .5);
+
+            .menu-item {
+                width: $menu-item-size;
+                height: $menu-item-size;
+
+                &:hover {
+                    color: $hover-color;
+                    background-color: $selected-bg-color;
+                    box-shadow: 0 16px 40px rgba($icon-color, .5);
+                }
+
+                &--selected {
+                }
+            }
+        }
+    }
+}

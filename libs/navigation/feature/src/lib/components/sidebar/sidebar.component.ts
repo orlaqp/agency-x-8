@@ -7,13 +7,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent implements OnInit {
-    menuItems: [
+    menuItems = [
         { id: 'add', icon: 'add', text: 'Add' },
         { id: 'dashboard', icon: 'dashboard', text: 'Dashboard' },
         { id: 'people', icon: 'people', text: 'Clients' },
         { id: 'calendar', icon: 'insert_invitation', text: 'Calendar' },
         { id: 'payments', icon: 'attach_money', text: 'Payments' },
-        { id: 'payments', icon: 'attach_money', text: 'Payments' },
+        { id: 'settings', icon: 'settings_input_component', text: 'Settings' },
     ]
 
   constructor() { }

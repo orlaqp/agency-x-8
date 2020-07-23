@@ -1,5 +1,10 @@
-<ul>
+<ul class="default">
 
-    <li></li>
+    <li *ngFor="let item of menuItems" class="menu-item">
+        <mat-icon class="menu-item__icon">{{item.icon}}</mat-icon>
+        <div class="menu-item__text mat-body-1">
+            {{item.text}}
+        </div>
+    </li>
 
 </ul>
