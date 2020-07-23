@@ -1,0 +1,21 @@
+@import 'mixins';
+
+@mixin home-component-theme($theme, $extraColorMap) {
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+    $extraBackgroundColor: map-get($map: $extraColorMap, $key: background);
+
+    agency-x-home {
+        .mat-drawer-container {
+            background-color: rgba($extraBackgroundColor, .25);
+
+            .mat-drawer {
+                border-right: 0;
+            }
+
+        }
+    }
+
+}

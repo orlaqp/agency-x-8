@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '@agency-x/angular-material';
 import { HomeComponent } from './containers/home/home.component';
 import { AuthorizationGuard } from '@agency-x/auth/data-access';
+import { NavigationFeatureModule } from '@agency-x/navigation/feature';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { AuthorizationGuard } from '@agency-x/auth/data-access';
     LanguagePickerModule,
     EmailInputModule,
     ReactiveFormsModule,
+    NavigationFeatureModule,
 
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: HomeComponent

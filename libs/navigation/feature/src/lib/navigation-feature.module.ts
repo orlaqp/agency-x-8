@@ -6,5 +6,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
     imports: [CommonModule],
     declarations: [NavigationComponent, SidebarComponent],
+    exports: [SidebarComponent]
 })
 export class NavigationFeatureModule {}

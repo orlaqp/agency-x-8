@@ -1,14 +1,17 @@
 @import '../../../../libs/home/feature/src/lib/containers/landing/landing.component-theme.scss';
 @import '../../../../libs/email-input/src/lib/email-input/email-input.component-theme.scss';
+@import '../../../../libs/home/feature/src/lib/containers/home/home.component-theme.scss';
 
 @mixin app-theme($theme) {
 
     $foreground: map-get($theme, foreground);
+    $extraColorMap: map-get($theme, extraColor);
 
     .mat-foreground {
         color: mat-color($foreground, base);
     }
 
+    @include home-component-theme($theme, $extraColorMap);
     @include landing-component-theme($theme);
     @include email-input-component-theme($theme);
 }

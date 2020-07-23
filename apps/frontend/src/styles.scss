@@ -24,7 +24,30 @@ $frontend-accent: mat-palette($mat-green, 500, 100, 900);
 $frontend-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$frontend-theme: mat-light-theme($frontend-primary, $frontend-accent, $frontend-warn);
+// $frontend-theme: mat-light-theme($frontend-primary, $frontend-accent, $frontend-warn);
+$frontend-theme: mat-light-theme((
+    color: (
+      primary: $frontend-primary,
+      accent: $frontend-accent,
+      warn: $frontend-warn
+    ),
+    // example of adding extra info to your theme
+    extraColor: (
+        background: #ECEFF4,
+        backgroundDarker: #AAB6CC,
+        lightBlue: #529BF9,
+        darkGray: #414248,
+    )
+));
+
+$extraColor: map-get($map: $frontend-theme, $key: extraColor);
+$extraBackgroundColor: map-get($map: $extraColor, $key: background);
+
+body {
+    background-color: rgba($extraBackgroundColor, .25);
+}
+
+// @debug $frontend-theme;
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
