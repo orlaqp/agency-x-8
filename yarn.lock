@@ -1509,10 +1509,10 @@
   dependencies:
     tslib "^1.9.0"
 
-"@ngxs/store@^3.3.2":
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.6.2.tgz#cfba63dc1e5bd422e89e54b3332cd69818510624"
-  integrity sha512-al7GU618SAuz2Ul4rFYVDgS1DM0gHReGOGvbnE7LBt4Etz3gsJERNYXPp2bSA7lZGaRPRaFfIHJN+Lm/GikFJw==
+"@ngxs/store@^3.6.2":
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.7.2.tgz#1088b0669adc382d36ca7ae8438c603e55879b42"
+  integrity sha512-1cnAjHOGCovfvhjtcAWBajrMXos97Un3c8ekKoS8FIHnq3aQOzY/ePspDRNi9kTcuBJ/r/xl097JC1ssEuNbyg==
   dependencies:
     tslib "^1.9.0"
 
@@ -10365,9 +10365,9 @@ tmp@0.1.0:
     rimraf "^2.6.3"
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
